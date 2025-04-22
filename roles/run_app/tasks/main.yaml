@@ -1,0 +1,11 @@
+
+    - name: Create app directory
+
+    - name: Copy files to the compose app directory
+
+    - name: Create startup script
+
+    - name: Add startup script to root crontab
+    
+    - name: Run the compose app
+    
