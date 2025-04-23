@@ -71,32 +71,33 @@ Ansible is the cornerstone of this project's automation strategy. Here's how it 
 ## 📁 Project Structure
 ```
 cloud-1/
-├── ansible/
-│   ├── inventory.ini       # Server inventory for Ansible
-│   └── main.yml            # Main Ansible playbook
-├── tasks/
-│   ├── create_app_directory.yml
-│   ├── copy_files_to_compose.yml
-│   ├── install_docker.yml
-│   ├── install_docker_dependencies.yml
-│   ├── add_docker_key.yml
-│   ├── add_docker_repository.yml
-│   ├── install_docker_compose.yml
-│   ├── start_docker_service.yml
-│   ├── add_user_to_docker_group.yml
-│   ├── create_startup_script.yml
-│   ├── add_startup_script_to_crontab.yml
-│   ├── run_phpmyadmin_from_docker.yml
-│   ├── run_compose_app.yml
-│   └── remove_docker_and_related_packages.yml
-├── app/
-│   ├── docker-compose.yml  # Docker Compose configuration
-│   ├── wordpress.conf      # WordPress Nginx configuration
-│   └── .env                # Environment variables for Docker Compose
-├── diagrams/
-│   ├── architecture.png    # Architecture diagram
-│   └── roadmap.png         # Deployment roadmap diagram
-└── README.md              # Project documentation
+├── roles/
+│   ├── down_app/tasks/
+│   │   └── main.yaml
+│   ├── install_docker/tasks/
+│   │   └── main.yaml
+│   ├── nginx/tasks/
+│   │   └── main.yaml
+│   ├── restart_container/tasks/
+│   │   └── main.yaml
+│   ├── run_app/
+│   │   ├── tasks/
+|   |   |   └── main.yaml
+│   |   └── files/wordpress_files/
+│   │       ├── nginx/conf.d/
+│   │       |   └── wordpress.conf
+│   |       └── docker-compose.yaml
+│   ├── run_database/tasks/
+│   │   └── main.yaml
+│   ├── run_phpmyadmin/tasks/
+│   │   └── main.yaml
+│   ├── uninstall_docker/tasks/
+│   │   └── main.yaml
+│   └── wordpress/tasks/
+│       └── main.yaml
+├── inventory.ini
+├── main.yaml
+└── README.md
 ```
 
 ## 🚀 Deployment Steps
